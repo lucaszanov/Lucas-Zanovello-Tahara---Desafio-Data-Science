@@ -1,59 +1,70 @@
 body{
+    /*Tamanho e tipo de fonte utilizados*/
     font-size: 16px;
     font-family: Arial;
 }
 
 .bar-graph{
-    width: 100%;
-    height: 450px;
+    /*Altura e largura do espaço a ser utilizado para construção do gráfico*/
+    width: 100%; /*Largura dinâmica*/
+    height: 450px; /*Altura fixa em 450 px*/
 }
 
 .bar-graph .columns{
+    /*Definição das colunas a serem utilizadas, aqui usando o conceito flex na direção de linha*/
+    /*Isso significa que a cada div dentro da div pai columns, serão criadas novas colunas*/
     display: flex;
     flex-direction: row;
     height: 100%;
 }
 
 .bar-graph .columns .yscale{
+    /*Configurações da coluna que comporta a escala y, com largura fixa de 80px e utilizando conceito flex*/
+    /*Usando flex-direction em column, a cada div dentro da div pai yscale, teremos novas linhas*/
     width: 80px;
     display: flex;
     flex-direction: column;
 }
 
 .bar-graph .columns .yscale .division{
+    /*Configuração de cada divisão dentro da escala y*/
     height: 100%;
-    display: flex;
-    align-items: flex-start;
+    display: flex; /*Conceito flex*/
+    align-items: flex-start; /*Posicionamento no topo*/
     padding-right: 1px;
 }
 
 .bar-graph .columns .graph-area{
-    flex-grow: 1;
+    /*Configuração do ambiente das barras coloridas*/
+    flex-grow: 1; /*Proporção de crescimento de um item, caso necessário*/
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*Usando flex-direction em column, a cada div dentro da div pai graph-area, teremos novas linhas*/
 }
 
 .bar-graph .columns .graph-area .bar-area{
-    flex-grow: 1;
+    flex-grow: 1; /*Proporção de crescimento de um item, caso necessário*/
+    /*Criação de linhas de borda esquerda e inferior*/
     border-left: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    display: flex;
+    display: flex; /*Conceito flex*/
     position: relative;
 }
 
 .bar-graph .columns .graph-area .bar-area .division{
-    width: calc(100%/2);
+    width: calc(100%/2); /*2 divisões, ou seja, os anos 2015 e 2016. Dividimos o espaço total disponível por 2*/
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
 .bar-graph .columns .graph-area .bar-area .division .bar{
-    width: 50px;
-    border-radius: 5px;
+    width: 50px; /*Largura de cada barra colorida fixa*/
+    border-radius: 5px; /*Bordas arredondadas em raio de 5px*/
     margin: 0 1px;
 }
 
+/*Definição das cores de cada barra a serem utilizadas nas divs correspondentes*/
+/*Cores extraídas do modelo*/
 .bar-graph .columns .graph-area .bar-area .division .bar.green{
     background: rgb(145, 204, 117);
     text-align:center;
@@ -64,14 +75,6 @@ body{
     text-align:center;
 }
 
-.bar-graph .columns .graph-area .bar-area .division .rotated {
-    writing-mode: tb-rl;
-    transform: rotate(-180deg);
-    position: relative;
-    left:-4.5%;
-    bottom: 10px;
-}
-
 .bar-graph .columns .graph-area .bar-area .division .bar.red{
     background: rgb(238, 102, 102);
     text-align:center;}
@@ -80,12 +83,23 @@ body{
     background: rgb(250, 200, 88);
     text-align:center;}
 
+/*Rotação do texto nas barras e disposição na parte interior*/
+.bar-graph .columns .graph-area .bar-area .division .rotated {
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    position: relative;
+    left:-4.5%;
+    bottom: 10px;
+}
+
 .bar-graph .columns .graph-area .xscale{
-    height: 60px;
+    /*Configuração do eixo x*/
+    height: 60px; /*Altura fixa em 60px*/
     display: flex;
 }
 
 .bar-graph .columns .graph-area .xscale .division{
+    /*Divisão da escala x em 2 para obedecer aos anos*/
     width: calc(100%/2);
     text-align: center;
 }

@@ -6,12 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <!--Carregando o arquivo css para configurações de estilos-->
+  <!--Carregando o arquivo .css para configurações de estilos-->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!--Início da classe principal que vai abrigar a escala em y, as barras e a escala em x-->
   <div class="bar-graph">
+    <!--Construção das colunas dentro do conceito flex-->
     <div class="columns">
+      <!--Criação da escala do eixo y com os valores pré-definidos-->
       <div class="yscale">
         <div class="division">400</div>
         <div class="division">300</div>
@@ -19,11 +22,13 @@
         <div class="division">100</div>
         <div class="division">0</div>
       </div>
+      <!--Criação da área do gráfico onde serão colocadas as barras coloridas-->
       <div class="graph-area">
         <div class="bar-area">
+          <!--Criação da primeira divisão (ano 2015)-->
           <div class="division">
-
             <div class="bar blue" style="height: 320px"></div>
+            <!--Texto na primeira barra em branco para melhor destaque-->
               <div class="rotated" style="color:white">320 Amazônia</div>
             <div class="bar green" style="height: 220px"></div>
               <div class="rotated" style="color:black">220 Cerrado</div>
@@ -31,8 +36,8 @@
               <div class="rotated" style="color:black">150 Pantanal</div>
             <div class="bar red" style="height: 98px"></div>
               <div class="rotated" style="color:black">98 Sertão</div>
-
           </div>
+          <!--Criação da segunda divisão (ano 2016)-->
           <div class="division">
             <div class="bar blue" style="height: 332px"></div>
               <div class="rotated" style="color:white">332 Amazônia</div>
@@ -45,7 +50,7 @@
 
           </div>
         </div>
-
+        <!--Criação dos labels para o eixo x (anos)-->
         <div class="xscale">
           <div class="division">
             2015
@@ -53,11 +58,9 @@
           <div class="division">
             2016
           </div>
-
         </div>
       </div>
     </div>
-
   </div>  
 </body>
 </html>
